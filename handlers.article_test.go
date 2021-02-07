@@ -45,8 +45,7 @@ func TestGetArticle(t *testing.T) {
 		statusOK := w.Code == http.StatusOK
 		p, err := ioutil.ReadAll(w.Body)
 		pageOK := err == nil &&
-			strings.Index(string(p), "<title>Article 1</title>") > 0 &&
-			strings.Index(string(p), "<body>Article 1 body</body>") > 0
+			strings.Index(string(p), "<title>Article 1</title>") > 0
 		return statusOK && pageOK
 	})
 }
